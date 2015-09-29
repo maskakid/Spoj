@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 #define LL unsigned long long int
-using namespace std;
 LL n,t;
 int main()
 {
