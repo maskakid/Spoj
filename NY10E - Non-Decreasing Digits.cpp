@@ -1,28 +1,22 @@
+/*
+    Author      : Akid (CSE'11,CUET)
+
+    Resources   : http://www.geeksforgeeks.org/total-number-of-non-decreasing-numbers-with-n-digits/
+*/
+
 #include<bits/stdc++.h>
 #define LL long long int
 using namespace std;
 
-int n,cnt=0;
+int n,x;
 LL dp[11][70];
 LL ans[70];
 
-void rec(int res,int prev, int deep)
-{
-    if(deep==n)
-        cnt++;
-    if(deep>n)  return;
-    for(int i=0; i<10; i++)
-    {
-        if(deep<n and prev<=i)
-            rec(res*10+i,i,deep+1);
-    }
-    return;
-}
-
-void rec1()
+void rec()
 {
     for(int i=0; i<10; i++)
         dp[i][1]=1;
+
     for(int i=0; i<10; i++)
         for(int j=2; j<65; j++)
             for(int k=0; k<=i; k++)
@@ -41,8 +35,8 @@ void rec1()
 
 int main()
 {
-    rec1();
-    int t,cas=1,x;
+    rec();
+    int t,cas=1;
     scanf("%d",&t);
     while(t--)
     {
